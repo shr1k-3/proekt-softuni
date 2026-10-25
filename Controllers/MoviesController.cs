@@ -12,7 +12,6 @@ public class MoviesController : Controller
 
     public MoviesController(AppDbContext context) => _context = context;
 
-    // READ (list)
     public async Task<IActionResult> Index()
     {
         var movies = await _context.Movies
@@ -23,7 +22,6 @@ public class MoviesController : Controller
         return View(movies);
     }
 
-    // READ (one)
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null) return NotFound();
@@ -34,7 +32,6 @@ public class MoviesController : Controller
         return movie == null ? NotFound() : View(movie);
     }
 
-    // CREATE
     public IActionResult Create()
     {
         LoadLists();
@@ -54,7 +51,6 @@ public class MoviesController : Controller
         return View(movie);
     }
 
-    // UPDATE
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null) return NotFound();
@@ -78,7 +74,6 @@ public class MoviesController : Controller
         return View(movie);
     }
 
-    // DELETE
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null) return NotFound();
