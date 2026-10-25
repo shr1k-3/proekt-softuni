@@ -1,0 +1,28 @@
+@model IEnumerable<MovieCatalog.Models.Movie>
+@{ ViewData["Title"] = "Movies"; }
+
+<h1>Movies</h1>
+<p><a asp-action="Create" class="btn btn-primary">Add new movie</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Title</th><th>Year</th><th>Rating</th><th>Genre</th><th>Director</th><th></th></tr>
+    </thead>
+    <tbody>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.Title</td>
+            <td>@m.Year</td>
+            <td>@m.Rating</td>
+            <td>@m.Genre?.Name</td>
+            <td>@m.Director?.Name</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@m.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@m.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@m.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

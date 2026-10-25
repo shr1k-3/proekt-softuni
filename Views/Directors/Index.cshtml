@@ -1,0 +1,19 @@
+@model IEnumerable<MovieCatalog.Models.Director>
+@{ ViewData["Title"] = "Directors"; }
+
+<h1>Directors</h1>
+<table class="table table-striped">
+    <thead>
+        <tr><th>Name</th><th>Country</th><th>Movies</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.Name</td>
+            <td>@d.Country</td>
+            <td>@string.Join(", ", d.Movies.Select(m => m.Title))</td>
+        </tr>
+    }
+    </tbody>
+</table>
