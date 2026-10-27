@@ -24,7 +24,7 @@ dotnet restore
 dotnet ef database update
 dotnet run
 ```
-Отвори адреса, показан в конзолата (напр. https://localhost:5001).
+Отвори адреса, показан в конзолата.
 
 ## Миграции
 ```bash
