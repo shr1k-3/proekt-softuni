@@ -15,7 +15,7 @@ ASP.NET Core MVC (.NET 8) приложение за каталог с филми
 
 ## Изисквания
 - .NET 8 SDK
-- SQL Server LocalDB (идва с Visual Studio)
+- SQL Server LocalDB
 - dotnet-ef: `dotnet tool install --global dotnet-ef`
 
 ## Стартиране
